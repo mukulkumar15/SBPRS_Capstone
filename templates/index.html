@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Please Enter a User Name for Recommendation</h2>
+<form action="/recommendation" method="POST">
+  <input type="username" name="username" placeholder="Username">
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
