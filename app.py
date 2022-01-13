@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import pandas as pd
 import model
 
+
 app = Flask(__name__)  # intitialize the flaks app  # common 
 
 # http:baseurl/recommendation
@@ -21,6 +22,7 @@ def recommendation():
     else:
         user_input = request.form['username'] #form to get user name
         df5 = model.top5(user_input)
+
         return  render_template('view.html',tables=[df5.to_html(classes='recommendation')], titles = ['NAN', 'Top 5 Recommendations for User'])
 
 
